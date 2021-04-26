@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "e097b75a-0f0f-4be1-8e54-e426b3ec1e47",
+		"name": "Android App Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"rajorshi\",\r\n  \"password\": \"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/user/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"rajorshi\",\r\n  \"email\": \"rajorshi@gmail.com\",\r\n  \"name\": \"Rajorshi Roy\",\r\n  \"password\": \"123456\",\r\n  \"contact\": \"+917635278762\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/user/register",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test route with",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoicmFqb3JzaGkifSwiaWF0IjoxNjE5NDQ5NzQ2LCJleHAiOjE2MjIwNDE3NDZ9.5OMK24C8XgaB_x1ioqse5McjxLUoDBppeU_HLryV-uI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/test/auth-required",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"test",
+						"auth-required"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test route without auth",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/test/auth-not-required",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"test",
+						"auth-not-required"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": ""
+		}
+	]
+}
