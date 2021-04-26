@@ -7,4 +7,9 @@ router.get('/auth-required', auth, async (req, res) => {
   return res.send('you have been authorized!')
 });
 
+// @description: anyone can access this endpoint without authorization
+router.get('/auth-not-required', async (req, res) => {
+  return res.send('working correctly!')
+});
+
 module.exports = router;
